@@ -67,7 +67,7 @@ btn_login.addEventListener("click", () => {
             localStorage.setItem("role", data.role);
 
             if (data.role.includes('admin')) {
-                window.location.href = "admin-dashboard.html";
+                window.location.href = "/Theme/trizen/trizen-rtl/MohamadReza-Chaghomi-Part/admin-dashboard.html";
             } else {
                 window.location.reload()
             }

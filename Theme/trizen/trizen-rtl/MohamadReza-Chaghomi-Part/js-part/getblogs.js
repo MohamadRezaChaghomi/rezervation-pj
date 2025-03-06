@@ -2,7 +2,7 @@ const blogApiUrl = 'http://avatoop.com/marina_kish/api/blogs';
 const blogToken = localStorage.getItem('Token');
 if (!blogToken) {
     console.error("توکن یافت نشد، لطفاً وارد شوید.");
-    window.location.href = "index.html";
+    window.location.href = "/Theme/trizen/trizen-rtl/nima-part/index.html";
 }
 
 document.addEventListener('DOMContentLoaded', function () {

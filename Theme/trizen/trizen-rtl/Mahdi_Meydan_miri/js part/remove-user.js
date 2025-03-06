@@ -23,7 +23,7 @@ removeUserBtn.addEventListener('click', () => {
             jQuery('#removeUser').modal('hide');  // مخفی کردن مدال تغییر رمز
             jQuery('#successRemoveUser').modal('show');  // نمایش مدال موفقیت
             jQuery('#successRemoveUser').on('hidden.bs.modal', function () {
-            window.location.href = "index.html";
+            window.location.href = "/Theme/trizen/trizen-rtl/nima-part/index.html";
             })
         }
     })

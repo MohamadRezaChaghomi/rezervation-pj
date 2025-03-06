@@ -65,7 +65,6 @@
 .testimonial-card {
     text-align: right;
 }
-<<<<<<< HEAD
 
 .cruise-img-div{
     width: 100%;
@@ -77,8 +76,6 @@
 }
 
 
-=======
->>>>>>> main
 .cruise-card .card-title {
     text-align: left;
 }
@@ -832,9 +829,6 @@
 /* 
 .ck[dir=rtl]{
     font-family: 'yekan' !important;
-<<<<<<< HEAD
-} */
-=======
 } */
 
 .faq-box {
@@ -904,4 +898,3 @@
 .filter-links a.active {
     border-bottom: 2px solid black;
 }
->>>>>>> main

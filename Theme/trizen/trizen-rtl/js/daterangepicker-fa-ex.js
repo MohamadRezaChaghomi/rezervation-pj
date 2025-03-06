@@ -263,8 +263,25 @@
             this.container.find('.cancelBtn').addClass(this.cancelClass);
         this.container.find('.applyBtn').html(this.locale.applyLabel);
         this.container.find('.cancelBtn').html(this.locale.cancelLabel);
-        this.container.find('.calendar').on('click.daterangepicker', '.prev', $.proxy(this.clickPrev, this)).on('click.daterangepicker', '.next', $.proxy(this.clickNext, this)).on('click.daterangepicker', 'td.available', $.proxy(this.clickDate, this)).on('mouseenter.daterangepicker', 'td.available', $.proxy(this.hoverDate, this)).on('mouseleave.daterangepicker', 'td.available', $.proxy(this.updateFormInputs, this)).on('change.daterangepicker', 'select.yearselect', $.proxy(this.monthOrYearChanged, this)).on('change.daterangepicker', 'select.monthselect', $.proxy(this.monthOrYearChanged, this)).on('change.daterangepicker', 'select.hourselect,select.minuteselect,select.secondselect,select.ampmselect', $.proxy(this.timeChanged, this)).on('click.daterangepicker', '.daterangepicker_input input', $.proxy(this.showCalendars, this)).on('change.daterangepicker', '.daterangepicker_input input', $.proxy(this.formInputsChanged, this));
-        this.container.find('.ranges').on('click.daterangepicker', 'button.applyBtn', $.proxy(this.clickApply, this)).on('click.daterangepicker', 'button.cancelBtn', $.proxy(this.clickCancel, this)).on('click.daterangepicker', 'li', $.proxy(this.clickRange, this)).on('mouseenter.daterangepicker', 'li', $.proxy(this.hoverRange, this)).on('mouseleave.daterangepicker', 'li', $.proxy(this.updateFormInputs, this));
+        
+        this.container.find('.calendar')
+            .on('click.daterangepicker', '.prev', $.proxy(this.clickPrev, this))
+            .on('click.daterangepicker', '.next', $.proxy(this.clickNext, this))
+            .on('click.daterangepicker', 'td.available', $.proxy(this.clickDate, this))
+            .on('mouseenter.daterangepicker', 'td.available', $.proxy(this.hoverDate, this))
+            .on('mouseleave.daterangepicker', 'td.available', $.proxy(this.updateFormInputs, this))
+            .on('change.daterangepicker', 'select.yearselect', $.proxy(this.monthOrYearChanged, this)) // اضافه شده
+            .on('change.daterangepicker', 'select.monthselect', $.proxy(this.monthOrYearChanged, this)) // اضافه شده
+            .on('change.daterangepicker', 'select.hourselect,select.minuteselect,select.secondselect,select.ampmselect', $.proxy(this.timeChanged, this))
+            .on('click.daterangepicker', '.daterangepicker_input input', $.proxy(this.showCalendars, this))
+            .on('change.daterangepicker', '.daterangepicker_input input', $.proxy(this.formInputsChanged, this));
+        
+        this.container.find('.ranges')
+            .on('click.daterangepicker', 'button.applyBtn', $.proxy(this.clickApply, this))
+            .on('click.daterangepicker', 'button.cancelBtn', $.proxy(this.clickCancel, this))
+            .on('click.daterangepicker', 'li', $.proxy(this.clickRange, this))
+            .on('mouseenter.daterangepicker', 'li', $.proxy(this.hoverRange, this))
+            .on('mouseleave.daterangepicker', 'li', $.proxy(this.updateFormInputs, this));
         if (this.element.is('input')) {
             this.element.on({
                 'click.daterangepicker': $.proxy(this.show, this),
@@ -504,6 +521,8 @@
             } else {
                 html += '<th></th>';
             }
+        
+            // ساخت dropdown‌های سال و ماه
             var dateHtml = this.locale.monthNames[jalaali ? calendar[1][1].jMonth() : calendar[1][1].month()] +
                 calendar[1][1].format(jalaali ? " jYYYY" : " YYYY");
             var localMonth = jalaali ? 'jMonth' : 'month',
@@ -515,9 +534,7 @@
                 var minYear = (minDate && minDate[localYear]()) || (currentYear - 50);
                 var inMinYear = currentYear == minYear;
                 var inMaxYear = currentYear == maxYear;
-                console.log(calendar[1][1])
-                console.log(currentMonth)
-                console.log(currentYear)
+        
                 var monthHtml = '<select class="monthselect form-control">';
                 for (var m = 0; m < 12; m++) {
                     if ((!inMinYear || m >= minDate[localMonth]()) && (!inMaxYear || m <= maxDate[localMonth]())) {
@@ -529,14 +546,17 @@
                     }
                 }
                 monthHtml += "</select>";
+        
                 var yearHtml = '<select class="yearselect form-control">';
                 for (var y = minYear; y <= maxYear; y++) {
                     yearHtml += '<option value="' + y + '"' +
                         (y === currentYear ? ' selected="selected"' : '') + '>' + y + '</option>';
                 }
                 yearHtml += '</select>';
+        
                 dateHtml = monthHtml + yearHtml;
             }
+        
             html += '<th colspan="5" class="month">' + dateHtml + '</th>';
             if ((!maxDate || maxDate.isAfter(calendar.lastDay)) && (!this.linkedCalendars || side == 'right' || this.singleDatePicker)) {
                 html += '<th class="next available"><i class="drp-angle-right"></i></th>';
@@ -553,21 +573,18 @@
             html += '</tr>';
             html += '</thead>';
             html += '<tbody>';
-
-
+        
             function renderNumber(n) {
-                    var digits = [],
-                        r;
-                    do {
-                        r = n % 10;
-                        n = (n - r) / 10;
-                        digits.unshift(['&#', r + 1776, ';'].join(''));
-                    } while (n > 0);
-
-
-                    return digits.join('');
-                
+                var digits = [],
+                    r;
+                do {
+                    r = n % 10;
+                    n = (n - r) / 10;
+                    digits.unshift(['&#', r + 1776, ';'].join(''));
+                } while (n > 0);
+                return digits.join('');
             }
+        
             if (this.endDate == null && this.dateLimit) {
                 var maxLimit = this.startDate.clone().add(this.dateLimit).endOf('day');
                 if (!maxDate || maxLimit.isBefore(maxDate)) {
@@ -608,11 +625,11 @@
                         if (classes[i] == 'disabled')
                             disabled = true;
                     }
-
+        
                     if (!disabled)
                         cname += 'available';
                     html += '<td class="' + cname.replace(/^\s+|\s+$/g, '') + '" data-toggle="tooltip" data-container="body" data-placement="top" title="' + (jalaali ? calendar[row][col].format('DD-MMMM-YYYY') : calendar[row][col].format('jYYYY/jMM/jDD')) + '" data-title="' + 'r' + row + 'c' + col + '">' +
-                         (language == 'en' ? (jalaali ? calendar[row][col].jDate() : calendar[row][col].date()) : renderNumber(jalaali ? calendar[row][col].jDate() : calendar[row][col].date())); + '</td>';
+                        (language == 'en' ? (jalaali ? calendar[row][col].jDate() : calendar[row][col].date()) : renderNumber(jalaali ? calendar[row][col].jDate() : calendar[row][col].date())) + '</td>';
                 }
                 html += '</tr>';
             }
@@ -1002,33 +1019,34 @@
                 cal = this.container.find('.calendar.' + leftOrRight);
             var month = parseInt(cal.find('.monthselect').val(), 10);
             var year = cal.find('.yearselect').val();
+        
             if (jalaali) {
-                console.log(month)
-                console.log(year)
                 var localDate = moment(year + '/' + month + '/15', 'jYYYY/jM/jD');
                 month = localDate.month();
                 year = localDate.year();
             }
-            console.log(month)
-            console.log(year)
+        
             if (!isLeft) {
                 if (year < this.startDate.year() || (year == this.startDate.year() && month < this.startDate.month())) {
                     month = this.startDate.month();
                     year = this.startDate.year();
                 }
             }
+        
             if (this.minDate) {
                 if (year < this.minDate.year() || (year == this.minDate.year() && month < this.minDate.month())) {
                     month = this.minDate.month();
                     year = this.minDate.year();
                 }
             }
+        
             if (this.maxDate) {
                 if (year > this.maxDate.year() || (year == this.maxDate.year() && month > this.maxDate.month())) {
                     month = this.maxDate.month();
                     year = this.maxDate.year();
                 }
             }
+        
             if (isLeft) {
                 this.leftCalendar.month.month(month).year(year);
                 if (this.linkedCalendars)
@@ -1038,8 +1056,7 @@
                 if (this.linkedCalendars)
                     this.leftCalendar.month = this.rightCalendar.month.clone().subtract(1, 'month');
             }
-            console.log(this.rightCalendar.month)
-            console.log(this.leftCalendar.month)
+        
             this.updateCalendars();
         },
         timeChanged: function (e) {

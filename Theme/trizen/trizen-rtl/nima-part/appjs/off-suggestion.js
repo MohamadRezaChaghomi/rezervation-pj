@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <div class="card-price d-flex align-items-center justify-content-between mb-3 mt-2">
                                         <p class="product-price d-flex font-size-14 pl-3">${product.price.toLocaleString()}&nbsp;&nbsp;تومان</p>
                                     </div>
-                                    <a href="product-single.html?id=${product.id}">مشاهده جزئیات<i class="la la-angle-left"></i></a>
+                                    <a href="/Theme/trizen/trizen-rtl/Mahdi_Meydan_miri/html part/product-single.html?id=${product.id}">مشاهده جزئیات<i class="la la-angle-left"></i></a>
                                 </a>
                             `;
 
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 event.preventDefault();
                                 let product_id = this.getAttribute("product_id");
                                 localStorage.setItem("product_id", product_id);
-                                window.location.href = `product-single.html?id=${product_id}`;
+                                window.location.href = `/Theme/trizen/trizen-rtl/Mahdi_Meydan_miri/html part/product-single.html?id=${product.id}`;
                             });
                             productsContainer.appendChild(productCard);
 

@@ -34,11 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
                                 productImage = imageData.data[0]; // اولین تصویر محصول
                             }
                             productCard.innerHTML = `
-<<<<<<< HEAD
-                                <a href="/Theme/trizen/trizen-rtl/Mahdi_Meydan_miri/html part/car-sidebar.html?id=${product.id}" 
-=======
-                                <a href="product-single.html?id=${product.id}" 
->>>>>>> 429200de3d55ce275b02bf5b10dd5678da1fa4f9
+                                <a href="/Theme/trizen/trizen-rtl/Mahdi_Meydan_miri/html part/product-single.html?id=${product.id}" 
+                      
                                    class="product-card"
                                    product_id="${product.id}">
                                     <img src="${productImage}" alt="${product.name}" class="product-image" 
@@ -48,11 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <div class="card-price d-flex align-items-center justify-content-between mb-3 mt-2">
                                         <p class="product-price d-flex font-size-14 pl-3">${product.price.toLocaleString()}&nbsp;&nbsp;تومان</p>
                                     </div>
-<<<<<<< HEAD
-                                    <a class="card-link" href="/Theme/trizen/trizen-rtl/Mahdi_Meydan_miri/html part/car-single.html?id=${product.id}">مشاهده جزئیات<i class="la la-angle-left"></i></a>
-=======
-                                    <a class="card-link" href="product-single.html?id=${product.id}">مشاهده جزئیات<i class="la la-angle-left"></i></a>
->>>>>>> 429200de3d55ce275b02bf5b10dd5678da1fa4f9
+
+                                    <a class="card-link" href="/Theme/trizen/trizen-rtl/Mahdi_Meydan_miri/html part/product-single.html?id=${product.id}">مشاهده جزئیات<i class="la la-angle-left"></i></a>
+
+           
                                 </a>
                             `;
 
@@ -60,11 +56,9 @@ document.addEventListener("DOMContentLoaded", function () {
                                 event.preventDefault();
                                 let product_id = this.getAttribute("product_id");
                                 localStorage.setItem("product_id", product_id);
-<<<<<<< HEAD
-                                window.location.href = `/Theme/trizen/trizen-rtl/Mahdi_Meydan_miri/html part/car-single.html?id=${product_id}`;
-=======
-                                window.location.href = `product-single.html?id=${product_id}`;
->>>>>>> 429200de3d55ce275b02bf5b10dd5678da1fa4f9
+
+                                window.location.href = `/Theme/trizen/trizen-rtl/Mahdi_Meydan_miri/html part/product-single.html?id=${product_id}`;
+
                             });
                             productsContainer.appendChild(productCard);
 

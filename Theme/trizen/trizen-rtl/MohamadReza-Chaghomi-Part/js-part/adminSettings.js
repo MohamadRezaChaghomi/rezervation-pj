@@ -4,7 +4,7 @@ const logoApiUrl = 'http://avatoop.com/marina_kish/api/settings/logo';
 const token = localStorage.getItem('Token');
 
 if (!token) {
-    window.location.href = "index.html";
+    window.location.href = "/Theme/trizen/trizen-rtl/nima-part/index.html";
 } else {
     document.addEventListener('DOMContentLoaded', function () {
         fetchSettings();

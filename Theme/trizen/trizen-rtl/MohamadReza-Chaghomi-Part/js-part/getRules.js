@@ -2,7 +2,7 @@ const ruleApiUrl = 'http://avatoop.com/marina_kish/api/rules';
 const ruleToken = localStorage.getItem('Token');
 if (!ruleToken) {
     console.error("توکن یافت نشد، لطفاً وارد شوید.");
-    window.location.href = "index.html";
+    window.location.href = "/Theme/trizen/trizen-rtl/nima-part/index.html";
 }
 
 document.addEventListener('DOMContentLoaded', function () {

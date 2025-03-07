@@ -6,7 +6,7 @@ const commentRestoreApiUrl = 'http://avatoop.com/marina_kish/api/comments/restor
 const token = localStorage.getItem('Token');
 if (!token) {
     console.error("توکن یافت نشد، لطفاً وارد شوید.");
-    window.location.href = "index.html";
+    window.location.href = "/Theme/trizen/trizen-rtl/nima-part/index.html";
 }
 
 document.addEventListener('DOMContentLoaded', function () {

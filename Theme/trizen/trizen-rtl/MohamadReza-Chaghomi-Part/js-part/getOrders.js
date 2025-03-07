@@ -5,7 +5,7 @@ const usersApiUrl = 'http://avatoop.com/marina_kish/api/users/index';
 const token = localStorage.getItem('Token');
 if (!token) {
     console.error("توکن یافت نشد، لطفاً وارد شوید.");
-    window.location.href = "index.html";
+    window.location.href = "/Theme/trizen/trizen-rtl/nima-part/index.html";
 }
 
 let products = [];

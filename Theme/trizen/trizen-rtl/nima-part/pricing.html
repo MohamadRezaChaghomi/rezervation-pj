@@ -48,20 +48,18 @@
     <div class="header-top-bar padding-right-100px padding-left-100px">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="header-top-content">
-                        <div class="header-left">
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="header-top-content">
                         <div class="header-right d-flex align-items-center justify-content-end">
-                           
-                            <div class="header-right-action">
+                            <div class="header-right-action" id="loginAndSignUpDiv">
                                 <a href="#" class="theme-btn theme-btn-small theme-btn-transparent mr-1" data-toggle="modal" data-target="#signupPopupForm">ثبت نام</a>
                                 <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" data-target="#loginPopupForm">ورود</a>
+                            </div>
+                            <div class="header-right-action d-none">
+                                <a href="../html part/user-information.html" class="theme-btn theme-btn-small d-flex align-items-center" id="nameOfUserHeader">
+                                    <span class="la la-user form-icon font-size-24"></span>
+
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -76,33 +74,33 @@
                     <div class="menu-wrapper">
                         <a href="#" class="down-button"><i class="la la-angle-down"></i></a>
                         <div class="logo">
-                            <a href="index.html"><img  id="header-logo" src="" alt="logo"></a>
+                            <a href="/Theme/trizen/trizen-rtl/nima-part/index.html"><img  id="header-logo" src="" alt="logo"></a>
                             <div class="menu-toggler">
                                 <i class="la la-bars"></i>
                                 <i class="la la-times"></i>
                             </div><!-- end menu-toggler -->
                         </div><!-- end logo -->
-                        <div class="main-menu-content">
-                            <nav>
-                                <ul>
-                                    <li>
-                                        <a href="#">صفحه اصلی</i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">تفریحات</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">وبلاگ ها</a>
-                                    </li>
-                                    <li>
-                                        <a href="ghavanin.html">قوانین و مقررات</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">درباره ما</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div><!-- end main-menu-content -->
+                            <div class="main-menu-content">
+                                <nav>
+                                    <ul>
+                                        <li>
+                                            <a  href="/Theme/trizen/trizen-rtl/nima-part/index.html">صفحه اصلی</i></a>
+                                        </li>
+                                        <li>
+                                            <a href="/Theme/trizen/trizen-rtl/Mahdi_Meydan_miri/html part/products.html">تفریحات</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Theme/trizen/trizen-rtl/nima-part/blog-grid.html">وبلاگ ها</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Theme/trizen/trizen-rtl/nima-part/ghavanin.html">قوانین و مقررات</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Theme/trizen/trizen-rtl/Mahdi_Meydan_miri/html part/contact.html">درباره ما</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div><!-- end main-menu-content -->
                         <div class="nav-btn">
                             <a href="become-local-expert.html" class="theme-btn"> تور لیدر محلی شو</a>
                         </div><!-- end nav-btn -->
@@ -139,7 +137,7 @@
     <div class="container">
         <div class="row">
             <div class="footer-logo padding-bottom-30px col-12 col-sm-6 col-lg-3">
-                <a href="index.html" class="foot__logo">
+                <a href="/Theme/trizen/trizen-rtl/nima-part/index.html" class="foot__logo">
                     <img id="footer-logo" src="images/logo.png" alt="logo">
                 </a>
             </div><!-- end logo -->
@@ -332,6 +330,7 @@
 <script src="appjs/login-api.js"></script>
 <script src="appjs/register-api.js"></script>
 <script src="appjs/footer-api.js"></script>
+<script src="/Theme/trizen/trizen-rtl/Mahdi_Meydan_miri/js part/header-name-user.js"></script>
 <script src="appjs/logo-api.js"></script>
 </body>
 </html>

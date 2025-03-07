@@ -2,7 +2,7 @@ const offCodeApiUrl = 'http://avatoop.com/marina_kish/api/off_codes';
 const offCodeToken = localStorage.getItem('Token');
 if (!offCodeToken) {
     console.error("توکن یافت نشد، لطفاً وارد شوید.");
-    window.location.href = "index.html";
+    window.location.href = "/Theme/trizen/trizen-rtl/nima-part/index.html";
 }
 
 document.addEventListener('DOMContentLoaded', function () {

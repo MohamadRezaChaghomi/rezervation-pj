@@ -5616,14 +5616,6 @@ body {
     }
 }
 
-.card-item:hover {
-    -webkit-transform: translateY(-3px);
-    -moz-transform   : translateY(-3px);
-    -ms-transform    : translateY(-3px);
-    -o-transform     : translateY(-3px);
-    transform        : translateY(-3px)
-}
-
 .destination-card {
     position: relative;
     overflow: hidden

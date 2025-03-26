@@ -87,7 +87,7 @@ sendTicketFAQ.addEventListener('click', () => {
     let userToken = localStorage.getItem('token');
 
     if (userToken) {
-        window.location.href = "user-no-ticket-send.html";
+        window.location.href = "../html part/user-ticket-send.html";
     } else {
         alertLogin.classList.remove('d-none')
     }

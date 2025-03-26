@@ -25,7 +25,7 @@ updateProfile.addEventListener('click', function () {
     const token = localStorage.getItem('Token');
     if (!token) {
         console.error("توکن یافت نشد، لطفاً وارد شوید.");
-        window.location.href = "index.html";
+        window.location.href = "/Theme/trizen/trizen-rtl/nima-part/index.html";
         return;
     }
 
@@ -82,7 +82,7 @@ changePasswordButton.addEventListener('click', function () {
     const token = localStorage.getItem('Token');
     if (!token) {
         console.error("توکن یافت نشد، لطفاً وارد شوید.");
-        window.location.href = "index.html";
+        window.location.href = "/Theme/trizen/trizen-rtl/nima-part/index.html";
         return;
     }
 
@@ -144,7 +144,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const token = localStorage.getItem('Token');
     if (!token) {
         console.error("توکن یافت نشد، لطفاً وارد شوید.");
-        window.location.href = "index.html";
+        window.location.href = "/Theme/trizen/trizen-rtl/nima-part/index.html";
         return;
     }
 

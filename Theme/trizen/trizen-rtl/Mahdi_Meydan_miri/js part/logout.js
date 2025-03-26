@@ -17,7 +17,7 @@ logout.addEventListener('click', (event) => {
         console.log("پاسخ از سرور:", response);
         localStorage.clear();
         console.log(localStorage);
-        window.location.href = "index.html";  // حالا کاربر را به صفحه اصلی منتقل کن
+        window.location.href = "/Theme/trizen/trizen-rtl/nima-part/index.html";  // حالا کاربر را به صفحه اصلی منتقل کن
     })
     .catch(error => {
         console.error("خطا در خروج از حساب:", error);

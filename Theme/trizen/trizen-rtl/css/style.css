@@ -3595,12 +3595,10 @@ body {
 .bread-bg-10 {
     background-image: url(../images/bread-bg9.jpg)
 }
-.bread-bg-11 {
-    background-image: url(../flags/4x3/cotact.svg)
-}
+
 .bread-svg {
     position: absolute;
-    bottom  : -2px;
+    bottom  : 0;
     left    : 0;
     width   : 100%;
     height  : 30px;
@@ -5228,6 +5226,8 @@ body {
 }
 
 .author-content .author-img {
+    width                : 64px;
+    height               : 64px;
     -webkit-border-radius: 50%;
     -moz-border-radius   : 50%;
     border-radius        : 50%;
@@ -5614,18 +5614,6 @@ body {
     .card-item .card-price {
         display: flex !important
     }
-}
-
-.card-item:hover {
-    -webkit-transform: translateY(-3px);
-    -moz-transform   : translateY(-3px);
-    -ms-transform    : translateY(-3px);
-    -o-transform     : translateY(-3px);
-    transform        : translateY(-3px)
-}
-
-.no-hover:hover{
-    transform: inherit;
 }
 
 .destination-card {
@@ -10056,7 +10044,7 @@ body {
 }
 
 .dashboard--bread {
-    padding-bottom: 60px
+    padding-bottom: 95px
 }
 
 .dashboard-bread-2 {
@@ -10249,6 +10237,19 @@ body {
     position      : relative
 }
 
+@media only screen and (min-width:480px) and (max-width:767px) {
+    .comment {
+        text-align: center;
+        display   : block
+    }
+}
+
+@media only screen and (min-width:320px) and (max-width:479px) {
+    .comment {
+        text-align: center;
+        display   : block
+    }
+}
 
 .comment-avatar .avatar__img {
     width                : 90px;

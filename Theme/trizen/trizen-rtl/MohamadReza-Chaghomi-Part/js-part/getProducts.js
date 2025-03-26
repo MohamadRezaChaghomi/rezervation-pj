@@ -3,7 +3,7 @@ const productRestoreApiUrl = 'http://avatoop.com/marina_kish/api/products/restor
 const productToken = localStorage.getItem('Token');
 if (!productToken) {
     console.error("توکن یافت نشد، لطفاً وارد شوید.");
-    window.location.href = "index.html";
+    window.location.href = "/Theme/trizen/trizen-rtl/nima-part/index.html";
 }
 
 document.addEventListener('DOMContentLoaded', function () {
